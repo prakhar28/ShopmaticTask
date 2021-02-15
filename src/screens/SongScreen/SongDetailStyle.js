@@ -33,5 +33,8 @@ export default StyleSheet.create({
     flex: 1,
     paddingRight: 5
   },
-  text: { fontSize: 18, color: '#808080', fontWeight: 'bold' }
+  text: { fontSize: 18, color: '#808080', fontWeight: 'bold' },
+  touchableComponent: {
+    marginLeft: 5
+  }
 })

@@ -13,6 +13,11 @@ export default StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#FFF'
   },
+  scrollViewContainer: {
+    flex: 1,
+    paddingHorizontal: 10,
+    marginTop: 20
+  },
   buttonStyle: {
     backgroundColor: '#EEE',
     paddingHorizontal: 40,
@@ -21,5 +26,17 @@ export default StyleSheet.create({
     borderColor: '#F0F0F0',
     borderRadius: 10
   },
-  text: { fontSize: 18, color: '#808080', fontWeight: 'bold' }
+  text: { fontSize: 18, color: '#808080', fontWeight: 'bold' },
+  renderSongComponent: {
+    marginHorizontal: 5,
+    marginVertical: 15
+  },
+  songImage: {
+    height: 100,
+    width: 100,
+    borderWidth: 1
+  },
+  renderListContainer: {
+    flex: 1
+  }
 })

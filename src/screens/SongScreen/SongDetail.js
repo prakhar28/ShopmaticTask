@@ -4,8 +4,7 @@ import styles from './SongDetailStyle'
 import TextComponent from '../../components/text/TextComponent'
 import TextTypes from '../../components/text/TextTypes'
 import Icon from 'react-native-vector-icons/Ionicons'
-import { sortedSongs } from '../../selectorFunctions/songsSorted'
-import { connect } from 'react-redux'
+import Color from '../../constants/colors'
 
 const SongDetail = ({ navigation, route }) => {
   const {
@@ -18,8 +17,8 @@ const SongDetail = ({ navigation, route }) => {
         <View style={styles.headerContainer}>
           <TouchableOpacity
             onPress={() => navigation.goBack()}
-            style={{ marginLeft: 5 }}>
-            <Icon name={'arrow-back'} size={25} color={'#000'} />
+            style={styles.touchableComponent}>
+            <Icon name={'arrow-back'} size={25} color={Color.black} />
           </TouchableOpacity>
           <TextComponent
             title={'Song Detail'}
