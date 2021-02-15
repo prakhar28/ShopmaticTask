@@ -10,7 +10,7 @@ const RenderSong = ({ navigateToSongDetail, item }) => {
         style={styles.renderSongComponent}
         onPress={() => navigateToSongDetail(item)}>
         <Image
-          source={{ uri: imageUrl[2]?.label }}
+          source={{ uri: imageUrl }}
           style={styles.songImage}
           resizeMode={'contain'}
         />

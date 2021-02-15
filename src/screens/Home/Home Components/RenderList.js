@@ -11,7 +11,7 @@ const RenderList = ({ songsList, data, navigateToSongDetail }) => {
         <TextComponent title={data} type={TextTypes.headingText} />
         <FlatList
           data={songsList[data]}
-          renderItem={item => (
+          renderItem={({ item }) => (
             <RenderSong
               item={item}
               navigateToSongDetail={navigateToSongDetail}

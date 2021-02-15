@@ -4,11 +4,13 @@ import styles from '../Search.style'
 import TextComponent from '../../../components/text/TextComponent'
 import TextTypes from '../../../components/text/TextTypes'
 
-const RenderSearchList = ({ item }) => {
+const RenderSearchList = ({ item, navigateToSongDetail }) => {
   const imageUrl = item?.['im:image'][1]?.label
   return (
     <>
-      <View style={styles.flatlistContainer}>
+      <TouchableOpacity
+        style={styles.flatlistContainer}
+        onPress={() => navigateToSongDetail(item)}>
         <Image
           source={{ uri: imageUrl }}
           style={styles.imageContainer}
@@ -20,7 +22,7 @@ const RenderSearchList = ({ item }) => {
             type={TextTypes.bodyText}
           />
         </View>
-      </View>
+      </TouchableOpacity>
     </>
   )
 }

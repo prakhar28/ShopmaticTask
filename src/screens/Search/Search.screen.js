@@ -3,6 +3,7 @@ import { SafeAreaView, View, TextInput, FlatList } from 'react-native'
 import styles from './Search.style'
 import { connect } from 'react-redux'
 import RenderSearchList from './Search Components/RenderSearchList'
+import ScreenNames from '../../constants/screens'
 
 const Search = ({ navigation, songsList }) => {
   const [searchString, setSearchString] = useState('')
@@ -25,13 +26,17 @@ const Search = ({ navigation, songsList }) => {
     return setSortedArray(searchedResult)
   }
 
+  const navigateToSongDetail = item => {
+    navigation.navigate(ScreenNames.songDetail, { item })
+  }
+
   return (
     <>
       <SafeAreaView style={styles.SafeAreaView2}>
         <View style={styles.outerWrapper}>
           <View style={styles.searchContainer}>
             <TextInput
-              placeholder={'Search'}
+              placeholder={'Search Song/Artist'}
               value={searchString}
               onChangeText={value => onHandleTextChange(value)}
               style={styles.textComponent}
@@ -39,7 +44,12 @@ const Search = ({ navigation, songsList }) => {
           </View>
           <FlatList
             data={sortedArray}
-            renderItem={({ item }) => <RenderSearchList item={item} />}
+            renderItem={({ item }) => (
+              <RenderSearchList
+                item={item}
+                navigateToSongDetail={navigateToSongDetail}
+              />
+            )}
             showVerticalScrollIndicator={false}
             keyExtractor={item => item?.id?.attributes?.['im:id']}
           />
